@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -15,36 +14,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getAnalytics(app);
+// const db = getAnalytics(app);
 
 
 
-// sign up
-const auth = getAuth();
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
 
 
-// Login
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    }); 
 
 
-export {db}
+
+
+
+
+ 
+
+
+export {app}
